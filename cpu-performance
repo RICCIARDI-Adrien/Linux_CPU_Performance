@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ $(id -u) -ne 0 ]
+then
+	printf "\033[31mThis command must be executed as root.\033[0m\n"
+	exit
+fi
+
+# Determine CPUs amount
+Processors_Count=$(cat /proc/cpuinfo | grep processor | wc -l)
+
+# Set "performance" governor to each detected CPU
+for i in $(seq 0 $((Processors_Count-1)))
+do
+	cpufreq-set -g performance -c $i
+done

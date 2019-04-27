@@ -1,0 +1,9 @@
+[Unit]
+Description=CPU Performance
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/cpu-performance
+
+[Install]
+WantedBy=multi-user.target
