@@ -7,7 +7,7 @@ then
 fi
 
 # Determine CPUs amount
-Processors_Count=$(cat /proc/cpuinfo | grep processor | wc -l)
+Processors_Count=$(nproc)
 
 # Set "performance" governor to each detected CPU
 for i in $(seq 0 $((Processors_Count-1)))
