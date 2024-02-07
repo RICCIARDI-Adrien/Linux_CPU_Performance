@@ -7,6 +7,11 @@ Also disable default "ondemand" systemd service (it is automatically re-enabled 
 
 ## Installation
 
+Install the required packages :
+```
+sudo apt install cpufrequtils
+```
+
 Install the program by executing the following command :
 ```
 sudo make install
