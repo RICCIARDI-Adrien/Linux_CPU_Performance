@@ -1,5 +1,6 @@
 [Unit]
 Description=CPU Performance
+After=multi-user.target
 
 [Service]
 Type=simple
